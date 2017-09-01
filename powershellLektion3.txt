@@ -1,0 +1,37 @@
+1a
+get-date -date 19.03.1994 -uformat %V
+get-date -uformat %V
+
+1b
+(Get-Date).AddDays(-1)
+
+1c
+get-eventlog -LogName system -entrytype Error,Warning -After (Get-Date).AddDays(-1) | Out-GridView
+
+1d
+Get-Service | Where-Object {$_.Name.StartsWith("S")} | Select name
+
+
+
+
+2a
+erledigt
+
+2b
+Listener [Source="GPO"]
+    Address = *
+    Transport = HTTP
+    Port = 5985
+    Hostname
+    Enabled = true
+    URLPrefix = wsman
+    CertificateThumbprint
+    ListeningOn = 127.0.0.1, 192.168.220.10, ::1, fe80::5efe:192.168.220.10%14, fe80::fcb9:3c25:e16a:8619%12
+
+2c
+get-eventlog -LogName system -entrytype Error,Warning -After (Get-Date).AddDays(-1) | 
+Out-GridView funktioniert bei RemoteShell nicht
+
+Alles OK
+
+
